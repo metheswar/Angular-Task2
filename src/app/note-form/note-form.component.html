@@ -1,0 +1,37 @@
+<div class="mt-5">
+    <div class="container-fluid h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+                  <div class="mb-3">
+                    <label for="subject" class="form-label">Subject:</label>
+                    <input type="text" id="subject" class="form-control" formControlName="subject">
+                    <div *ngIf="noteForm.get('subject').invalid && noteForm.get('subject').touched" class="invalid-feedback">
+                      Subject is required
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="title" class="form-label">Title:</label>
+                    <input type="text" id="title" class="form-control" formControlName="title">
+                    <div *ngIf="noteForm.get('title').invalid && noteForm.get('title').touched" class="invalid-feedback">
+                      Title is required
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="notes" class="form-label">Notes:</label>
+                    <textarea id="notes" class="form-control" formControlName="notes"></textarea>
+                    <div *ngIf="noteForm.get('notes').invalid && noteForm.get('notes').touched" class="invalid-feedback">
+                      Notes are required
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary" [disabled]="noteForm.invalid">Add Note</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</div>

@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <ng-container *ngFor="let note of notes">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header">
+              {{ note.subject }}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ note.title }}</h5>
+              <p class="card-text">{{ note.notes }}</p>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  
